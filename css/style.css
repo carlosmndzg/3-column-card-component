@@ -1,0 +1,115 @@
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+  background-color: var(--very-light-gray);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card-container {
+  max-width: 75rem;
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card {
+  background-color: var(--default-color);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card__img {
+  width: 22.5%;
+}
+
+.card__title {
+  color: var(--very-light-gray);
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 3.2rem;
+}
+
+.card__text {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--transparent-white);
+}
+
+.card__button {
+  background-color: var(--very-light-gray);
+  border: none;
+  align-self: flex-start;
+  display: inline-block;
+  padding: 1.4rem 2rem;
+  border-radius: 3rem;
+  font-size: 1.3rem;
+  font-family: inherit;
+  color: var(--default-color);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.card__button:hover {
+  box-shadow: inset 0 0 0 0.2rem #fff;
+  background-color: var(--default-color);
+  color: var(--very-light-gray);
+}
+
+.card:nth-child(1) {
+  --default-color: var(--bright-orange);
+}
+
+.card:nth-child(2) {
+  --default-color: var(--dark-cyan);
+}
+
+.card:nth-child(3) {
+  --default-color: var(--very-dark-cyan);
+}
+
+@media (min-width: 39em) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  html {
+    font-size: 72.5%;
+  }
+
+  .card {
+    gap: 2.6rem;
+  }
+
+  .card__text {
+    margin-bottom: 5.5rem;
+  }
+
+  .card__button {
+    margin-top: auto;
+  }
+}
